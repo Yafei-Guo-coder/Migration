@@ -125,11 +125,19 @@ public class MergeVCF {
                 boolean flag = map.containsKey((String)list.get(0));
                 
                 if(flag){
-                    String oldV = map.get((String)list.get(0));
-                    String newV = (String)list.get(1);
-                    newV = oldV + " " + newV;
-                
-                    map.put((String)list.get(0), newV);
+                    List list2 = Arrays.asList(map.get((String)list.get(0)).split(" "));
+                    if(list2.size()==143){
+                        String oldV = map.get((String)list.get(0));
+                        String newV = (String)list.get(1);
+                        newV = oldV + " " + newV;
+                        map.put((String)list.get(0), newV);
+                    }else{
+                        String oldV = map.get((String)list.get(0));
+                        String newV = getDot(42) + " " + (String)list.get(1);
+                        newV = oldV + " " + newV;
+                        map.put((String)list.get(0), newV);
+                    }
+                    
                 }else{
                     String oldV = (String)list.get(1);
                     String newV = getDot(143);
