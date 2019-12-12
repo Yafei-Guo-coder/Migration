@@ -56,7 +56,7 @@ public class MergeVCF {
 //            }
             
             //构建输出文件：vcf_merge.vcf
-            File writename = new File("/Users/guoyafei/Downloads/Results/MergeVCF/Merge.vcf"); // 相对路径，如果没有则要建立一个新的output.txt文件
+            File writename = new File("/data1/home/yafei/SNP/Origin_File/Merge.vcf"); // 相对路径，如果没有则要建立一个新的output.txt文件
 	    writename.createNewFile(); // 创建新文件
 	    BufferedWriter out = new BufferedWriter(new FileWriter(writename));
             
@@ -66,7 +66,7 @@ public class MergeVCF {
             //读取分文件1：并且将内容存储为hashmap，键：char+pos。值：基因分型。
             BufferedReader bufferedReader2;
             try (
-            FileInputStream inputStream = new FileInputStream("/Users/guoyafei/Downloads/Results/MergeVCF/mergeE_sub.vcf")) {
+            FileInputStream inputStream = new FileInputStream("/data1/home/yafei/SNP/Origin_File/mergeE.vcf")) {
             bufferedReader2 = new BufferedReader(new InputStreamReader(inputStream));
              
             String str2 = null;
@@ -83,7 +83,7 @@ public class MergeVCF {
             BufferedReader bufferedReader3;
             
             try (
-            FileInputStream inputStream = new FileInputStream("/Users/guoyafei/Downloads/Results/MergeVCF/mergeT_sub.vcf")) {
+            FileInputStream inputStream = new FileInputStream("/data1/home/yafei/SNP/Origin_File/mergeT.vcf")) {
             bufferedReader3 = new BufferedReader(new InputStreamReader(inputStream));
          
             String str = null;
@@ -113,7 +113,7 @@ public class MergeVCF {
             BufferedReader bufferedReader4;
             
             try (
-            FileInputStream inputStream = new FileInputStream("/Users/guoyafei/Downloads/Results/MergeVCF/mergeW_sub.vcf")) {
+            FileInputStream inputStream = new FileInputStream("/data1/home/yafei/SNP/Origin_File/mergeW.vcf")) {
             bufferedReader4 = new BufferedReader(new InputStreamReader(inputStream));
          
             String str = null; 
