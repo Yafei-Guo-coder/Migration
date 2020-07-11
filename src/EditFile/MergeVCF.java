@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package src;
+package EditFile;
 
 import static com.google.common.io.Files.map;
 import static com.univocity.parsers.conversions.Conversions.string;
