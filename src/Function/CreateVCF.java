@@ -48,7 +48,7 @@ public class CreateVCF {
             List<String> listTab = Arrays.asList(lineTab.split("\t",6));
             List<String> listSite = Arrays.asList(lineSite.split(" "));
             List<String> listConvers = Arrays.asList(lineConvers.split("\t"));
-            if (listSite.get(1).equals(listConvers.get(4))) {
+//            if (listSite.get(1).equals(listConvers.get(4))) {
                 List num = Arrays.asList((listTab.get(5)).split("\t"));
                 Collections.replaceAll(num, "2", "0/0");
                 Collections.replaceAll(num, "1", "0/1");
@@ -65,26 +65,26 @@ public class CreateVCF {
                 }
                 sb2.append(num.get(num.size()-1));
                 writer.write(sb2.toString()+"\n");
-            }
+//            }
 
-            if (listSite.get(1).equals( listConvers.get(5))) {
-                List num = Arrays.asList((listTab.get(5)).split("\t"));
-                Collections.replaceAll(num, "2", "1/1");
-                Collections.replaceAll(num, "1", "0/1");
-                Collections.replaceAll(num, "0", "0/0");
-                Collections.replaceAll(num, "-1", "./.");
-                Collections.replaceAll(num, "-2", "./.");
-                List<String> firstLine = Arrays.asList(listConvers.get(2), listConvers.get(3), listConvers.get(2)+"-"+listConvers.get(3),listSite.get(1),listConvers.get(4),".",".",".","GT");
-                StringBuilder sb2 = new StringBuilder();
-                for (int i = 0; i < firstLine.size(); i++) {
-                    sb2.append(firstLine.get(i)+"\t");
-                }
-                for (int i = 0; i < num.size()-1; i++) {
-                    sb2.append(num.get(i)+"\t");
-                }
-                sb2.append(num.get(num.size()-1));
-                writer.write(sb2.toString()+"\n");
-            }
+//            if (listSite.get(1).equals( listConvers.get(5))) {
+//                List num = Arrays.asList((listTab.get(5)).split("\t"));
+//                Collections.replaceAll(num, "2", "1/1");
+//                Collections.replaceAll(num, "1", "0/1");
+//                Collections.replaceAll(num, "0", "0/0");
+//                Collections.replaceAll(num, "-1", "./.");
+//                Collections.replaceAll(num, "-2", "./.");
+//                List<String> firstLine = Arrays.asList(listConvers.get(2), listConvers.get(3), listConvers.get(2)+"-"+listConvers.get(3),listSite.get(1),listConvers.get(4),".",".",".","GT");
+//                StringBuilder sb2 = new StringBuilder();
+//                for (int i = 0; i < firstLine.size(); i++) {
+//                    sb2.append(firstLine.get(i)+"\t");
+//                }
+//                for (int i = 0; i < num.size()-1; i++) {
+//                    sb2.append(num.get(i)+"\t");
+//                }
+//                sb2.append(num.get(num.size()-1));
+//                writer.write(sb2.toString()+"\n");
+//            }
 
         }
         readerTab.close();
