@@ -29,18 +29,6 @@ public class Para {
 //        }
 //        return name;
 //    }
-    public static void main(String[] args) {
-        int chrA[] = {1,2,7,8,13,14,19,20,25,26,31,32,37,38};
-        getNewTaxafile("AA_bam.txt", chrA,"/data2/xuebo/Projects/Speciation/More_accessions/hapScan/parameters_hapScanner_001.txt","/data2/xuebo/Projects/Speciation/More_accessions/hapScan/para_file/parameters_hapScannerAA_","AA");
-        int chrB[] = {3,4,9,10,15,16,21,22,27,28,33,34,39,40};
-        getNewTaxafile("SS_bam.txt",chrB,"/data2/xuebo/Projects/Speciation/More_accessions/hapScan/parameters_hapScanner_001.txt","/data2/xuebo/Projects/Speciation/More_accessions/hapScan/para_file/parameters_hapScannerBB_","BB");
-        int chrD[] = {5,6,11,12,17,18,23,24,29,30,35,36,41,42};
-        getNewTaxafile("DD_bam.txt",chrD,"/data2/xuebo/Projects/Speciation/More_accessions/hapScan/parameters_hapScanner_001.txt","/data2/xuebo/Projects/Speciation/More_accessions/hapScan/para_file/parameters_hapScannerDD_","DD");
-        int chrAB[] = {1,2,7,8,13,14,19,20,25,26,31,32,37,38,3,4,9,10,15,16,21,22,27,28,33,34,39,40};
-        getNewTaxafile("AABB_bam.txt",chrAB,"/data2/xuebo/Projects/Speciation/More_accessions/hapScan/parameters_hapScanner_001.txt","/data2/xuebo/Projects/Speciation/More_accessions/hapScan/para_file/parameters_hapScannerAABB_","AABB");
-        int chrABD[] = {1,2,7,8,13,14,19,20,25,26,31,32,37,38,3,4,9,10,15,16,21,22,27,28,33,34,39,40,5,6,11,12,17,18,23,24,29,30,35,36,41,42};
-        getNewTaxafile("AABBDD_bam.txt",chrABD,"/data2/xuebo/Projects/Speciation/More_accessions/hapScan/parameters_hapScanner_001.txt","/data2/xuebo/Projects/Speciation/More_accessions/hapScan/para_file/parameters_hapScannerAABBDD_","AABBDD");
-    }
     public static void getNewTaxafile(String bamPath, int chr[], String infileS, String outfileS, String outDir){
         try {
             BufferedWriter bw = null;
@@ -58,6 +46,7 @@ public class Para {
                 String bam = bamPath;
                 for(int i = 0; i < chrA.length;i++ ){
                     BufferedReader br = IOUtils.getTextReader(infileS);
+
                     int line = 1;
                     //bw = IOUtils.getTextWriter(outfileS+"/parameters_hapScannerAABBDD_chr"+chrA[i]+".txt");
                     //bw = IOUtils.getTextWriter(outfileS+"/parameters_hapScannerBarley_chr"+chrA[i]+".txt");
@@ -69,12 +58,12 @@ public class Para {
                             bw.newLine();
                         }else if(line==11){
                             //bw.write("/data2/xuebo/Projects/Speciation/E5/hapSacn/posAllele/chr"+chrA[i]+".allele.txt");
-                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/posAllele/chr"+chrA[i]+"_posAllele.txt");
+                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/CS_posAllele/chr"+chrA[i]+"_posAllele.txt");
                             bw.newLine();
                         }
                         else if(line==13){
                             //bw.write("/data2/xuebo/Projects/Speciation/E5/hapSacn/hapPos/chr"+chrA[i]+".pos.txt");
-                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/pos/chr"+chrA[i]+"_pos.txt");
+                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/CS_pos/chr"+chrA[i]+"_pos.txt");
                             bw.newLine();
                         }
                         else if(line==15){
@@ -84,7 +73,7 @@ public class Para {
                             bw.write("/data1/home/xuebo/anaconda3/bin/samtools");
                             bw.newLine();
                         }else if(line==21){
-                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/out/"+outDir+"/chr"+chrA[i]);
+                            bw.write("/data2/xuebo/Projects/Speciation/More_accessions/hapScan/CSout/"+outDir+"/chr"+chrA[i]);
                             bw.newLine();
                         }else{
                             bw.write(temp);
