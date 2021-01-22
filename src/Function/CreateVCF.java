@@ -37,7 +37,6 @@ public class CreateVCF {
         sb.append("#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\t");
         sb.append(header);
         writer.write(sb+"\n");
-
         readerConvers.readLine();
         readerTab.readLine();
         String lineTab;
@@ -49,9 +48,9 @@ public class CreateVCF {
             List<String> listConvers = Arrays.asList(lineConvers.split("\t"));
             if (listSite.get(1).equals(listConvers.get(4))) {
                 List num = Arrays.asList((listTab.get(5)).split("\t"));
-                Collections.replaceAll(num, "2", "1/1");
+                Collections.replaceAll(num, "2", "0/0");
                 Collections.replaceAll(num, "1", "0/1");
-                Collections.replaceAll(num, "0", "0/0");
+                Collections.replaceAll(num, "0", "1/1");
                 Collections.replaceAll(num, "-1", "./.");
                 Collections.replaceAll(num, "-2", "./.");
                 List<String> firstLine = Arrays.asList(listConvers.get(2), listConvers.get(3), listConvers.get(2)+"-"+listConvers.get(3),listSite.get(1),listConvers.get(5),".",".",".","GT");
@@ -68,9 +67,9 @@ public class CreateVCF {
 
             if (listSite.get(1).equals( listConvers.get(5))) {
                 List num = Arrays.asList((listTab.get(5)).split("\t"));
-                Collections.replaceAll(num, "2", "0/0");
+                Collections.replaceAll(num, "2", "1/1");
                 Collections.replaceAll(num, "1", "0/1");
-                Collections.replaceAll(num, "0", "1/1");
+                Collections.replaceAll(num, "0", "0/0");
                 Collections.replaceAll(num, "-1", "./.");
                 Collections.replaceAll(num, "-2", "./.");
                 List<String> firstLine = Arrays.asList(listConvers.get(2), listConvers.get(3), listConvers.get(2)+"-"+listConvers.get(3),listSite.get(1),listConvers.get(4),".",".",".","GT");
