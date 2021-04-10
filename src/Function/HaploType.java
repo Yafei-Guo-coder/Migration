@@ -15,6 +15,7 @@ public class HaploType {
         String line;
         List<String> listTab;
         while ((line = rd.readLine()) != null ) {
+            if (line.startsWith("#")) continue;
             listTab = Arrays.asList(line.split("\t"));
             StringBuilder bf = new StringBuilder();
             for (int i = 9; i < listTab.size(); i++) {
