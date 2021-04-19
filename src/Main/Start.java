@@ -2,9 +2,7 @@ package Main;
 
 import java.io.IOException;
 
-import static Function.CreatePara.Para1;
 import static Function.HaploType.getHaplo;
-import static Function.CreatePara.Para2;
 
 /**
  * @author Yafei Guo

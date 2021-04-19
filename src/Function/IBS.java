@@ -2,9 +2,6 @@ package Function;
 
 import pgl.infra.dna.genot.GenoIOFormat;
 import pgl.infra.dna.genot.GenotypeGrid;
-import pgl.infra.dna.genot.GenotypeOperation;
-import pgl.infra.dna.genot.summa.SumTaxaDivergence;
-import pgl.infra.utils.IOFileFormat;
 import pgl.infra.utils.IOUtils;
 
 import java.io.*;

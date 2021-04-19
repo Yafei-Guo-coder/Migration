@@ -1,14 +1,12 @@
 package Function;
 import java.io.*;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 /**
  * @author Yafei Guo
  * @create 2020-09-26 10:52 AM
  */
 public class HaploType {
-
     public static void getHaplo(String input, String output) throws IOException {
         BufferedReader rd = new BufferedReader(new FileReader(new File(input)));
         BufferedWriter wt = new BufferedWriter(new FileWriter(new File(output)));

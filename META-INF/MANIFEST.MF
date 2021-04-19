@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: Main.Start
+Main-Class: pgl.PGLAPPEntrance
 Class-Path: lib/annotations-3.0.1u2.jar lib/biojava-alignment-4.2.0.jar 
  lib/biojava-core-4.2.0.jar lib/biojava-genome-4.2.0.jar lib/biojava-phy
  lo-4.2.0.jar lib/classgraph-4.8.54.jar lib/colt.jar lib/commons-cli-1.4
