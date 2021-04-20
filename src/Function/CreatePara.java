@@ -11,16 +11,16 @@ import java.io.BufferedWriter;
  * @create 2020-07-06 2:27 PM
  */
 public class CreatePara {
-    public static void Para1(int chr[], String infileS, String outfileS, String outDir){
+    //产生step1的参数文件
+    public static void Para1(int chr[], String infileS, String outfileS){
         try {
             BufferedWriter bw = null;
             String temp = "";
             int chrA[] = chr;
-
                 for(int i = 0; i < chrA.length;i++ ){
                     BufferedReader br = IOUtils.getTextReader(infileS);
                     int line = 1;
-                    bw = IOUtils.getTextWriter(outDir+"/"+outfileS + chrA[i]+"_parameters.txt");
+                    bw = IOUtils.getTextWriter(outfileS + chrA[i]+"_parameters.txt");
                     while((temp = br.readLine())!=null){
                         if(line==14){
                             bw.write("/data1/home/xinyue/ref/byChr/chr0"+chrA[i]+".fa.gz");
@@ -51,7 +51,48 @@ public class CreatePara {
             e.printStackTrace();
         }
     }
-    public static void Para2(int chr[], String infileS, String outfileS, String outDir){
+    //产生step3的参数文件
+    public static void Para3(int chr[], String infileS, String outfileS){
+        try {
+            BufferedWriter bw = null;
+            String temp = "";
+            int chrA[] = chr;
+            for(int i = 0; i < chrA.length;i++ ){
+                BufferedReader br = IOUtils.getTextReader(infileS);
+                int line = 1;
+                bw = IOUtils.getTextWriter(outfileS + chrA[i]+"_parameters.txt");
+                while((temp = br.readLine())!=null){
+                    if(line==14){
+                        bw.write("/data1/home/xinyue/ref/byChr/chr0"+chrA[i]+".fa.gz");
+//                            bw.write("/data1/home/yafei/test/test/ZNTaxaBam.txt");
+                        bw.newLine();
+                    }else if(line==23){
+                        bw.write(Integer.toString(chrA[i]));
+//                            bw.write("/data1/home/yafei/test/test/Vmap1_posAllele/chr"+chrA[i]+"_posAllele.txt");
+                        bw.newLine();
+                    }
+                    else if(line==35){
+                        bw.write("/data2/xinyue/vmap3/vcf/chr0"+chrA[i]);
+                        bw.newLine();
+                    }
+                    else{
+                        bw.write(temp);
+                        bw.newLine();
+                    }
+                    line++;
+                }
+                bw.flush();
+                bw.close();
+                br.close();
+            }
+//            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    //产生step2的参数文件
+    public static void Para2(int chr[], String infileS, String outfileS){
         try {
             BufferedWriter bw = null;
             String temp = "";
@@ -60,7 +101,7 @@ public class CreatePara {
             for(int i = 0; i < chrA.length;i++ ){
                 BufferedReader br = IOUtils.getTextReader(infileS);
                 int line = 1;
-                bw = IOUtils.getTextWriter(outDir+"/"+outfileS + chrA[i]+"_parameters.txt");
+                bw = IOUtils.getTextWriter(outfileS + chrA[i]+"_parameters.txt");
                 while((temp = br.readLine())!=null){
                     if(line==14){
                         bw.write("/data1/home/xinyue/ref/byChr/chr0"+chrA[i]+".fa.gz");
