@@ -22,17 +22,18 @@ public class CreatePara {
                     int line = 1;
                     bw = IOUtils.getTextWriter(outfileS + chrA[i]+"_parameters.txt");
                     while((temp = br.readLine())!=null){
-                        if(line==14){
-                            bw.write("/data1/home/xinyue/ref/byChr/chr0"+chrA[i]+".fa.gz");
+                        if(line==23){
+                            bw.write(Integer.toString(chrA[i]));
+//                            bw.write("/data1/home/xinyue/ref/byChr/chr0"+chrA[i]+".fa.gz");
 //                            bw.write("/data1/home/yafei/test/test/ZNTaxaBam.txt");
                             bw.newLine();
-                        }else if(line==44){
-                            bw.write(Integer.toString(chrA[i]));
-//                            bw.write("/data1/home/yafei/test/test/Vmap1_posAllele/chr"+chrA[i]+"_posAllele.txt");
+                        }else if(line==17){
+//                            bw.write(Integer.toString(chrA[i]));
+                            bw.write("/data2/yafei/Hapscanner/chr0"+chrA[i]+"_posAllele.txt");
                             bw.newLine();
                         }
-                        else if(line==50){
-                            bw.write("/data2/xinyue/vmap3/ing/chr0"+chrA[i]);
+                        else if(line==20){
+                            bw.write("/data2/yafei/Hapscanner/chr0"+chrA[i]+"_pos.txt");
                             bw.newLine();
                         }
                         else{
