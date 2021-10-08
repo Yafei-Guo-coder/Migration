@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class HaploType {
     public static void getHaplo(String input, String output) throws IOException {
-        BufferedReader rd = new BufferedReader(new FileReader(new File(input)));
-        BufferedWriter wt = new BufferedWriter(new FileWriter(new File(output)));
+        BufferedReader rd = new BufferedReader(new FileReader(input));
+        BufferedWriter wt = new BufferedWriter(new FileWriter(output));
         String line;
         List<String> listTab;
         while ((line = rd.readLine()) != null ) {
